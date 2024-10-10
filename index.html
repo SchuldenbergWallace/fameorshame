@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generatore di Contratti Musicali</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Generatore di Contratti Musicali</h1>
+        <form id="contractForm">
+            <input type="text" id="artistaNome" placeholder="Nome dell'Artista" required />
+            <input type="text" id="artistaAlias" placeholder="Alias dell'Artista" required />
+            <input type="text" id="luogoNascita" placeholder="Luogo di Nascita" required />
+            <input type="date" id="dataNascita" placeholder="Data di Nascita" required />
+            <input type="number" id="traccePerAlbum" placeholder="Numero di tracce per album" required />
+            <input type="text" id="durataContratto" placeholder="Durata del contratto" required />
+            <input type="number" id="percentualeRoyalty" placeholder="Percentuale Royalty (%)" required />
+            <textarea id="obblighiLabel" placeholder="Obblighi della Label" required></textarea>
+            <textarea id="obblighiArtista" placeholder="Obblighi dell'Artista" required></textarea>
+            <button type="button" id="generateButton">Genera e carica su imgbb</button>
+        </form>
+
+        <div id="contractPreview" style="display: none; padding: 20px; border: 1px solid black; width: 500px; margin-top: 20px;">
+            <h1>CONTRATTO DI PRODUZIONE MUSICALE</h1>
+            <p>TRA:</p>
+            <p>Fame or Shame S.r.l., con sede legale al civico 88, rappresentata da Billy Miller e Luber Miller</p>
+            <p>E</p>
+            <p><strong id="previewArtistaNome"></strong>, in arte <strong id="previewArtistaAlias"></strong> nato a <strong id="previewLuogoNascita"></strong> il <strong id="previewDataNascita"></strong>.</p>
+            <p><strong>PREMESSE</strong></p>
+            <p>La Label produce e distribuisce opere musicali.</p>
+            <p>L’Artista, noto come <strong id="previewArtistaAlias"></strong>, collabora con la Label per la produzione e distribuzione delle proprie opere.</p>
+            <p><strong>ARTICOLI</strong></p>
+            <p>La Label produrrà, promuoverà e distribuirà le opere musicali dell'Artista, con un minimo di <strong id="previewTraccePerAlbum"></strong> tracce per album. L'Artista concede i diritti esclusivi di sfruttamento commerciale.</p>
+            <p><strong>Durata:</strong> Il contratto durerà <strong id="previewDurataContratto"></strong>, con possibile rinnovo su accordo delle parti.</p>
+            <p><strong>Compensi:</strong> L'Artista riceverà una royalty del <strong id="previewPercentualeRoyalty"></strong>% sugli incassi netti da vendite e streaming, pagati trimestralmente.</p>
+            <p><strong>Obblighi della Label:</strong> <span id="previewObblighiLabel"></span></p>
+            <p><strong>Obblighi dell'Artista:</strong> <span id="previewObblighiArtista"></span></p>
+            <p><strong>Risoluzione:</strong> In caso di inadempienza, il contratto può essere risolto immediatamente con diritto di risarcimento.</p>
+            <p>Letto e firmato.</p>
+            <p>Firma dell'Artista: Sleepy Stewie</p>
+            <p>Firma della Label: Fame or Shame S.r.l.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
